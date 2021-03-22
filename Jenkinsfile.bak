@@ -28,10 +28,4 @@ node {
       archiveArtifacts 'target/*.jar'
 	
    }
-   stage('SonarQube Scan?') {
-
-      withSonarQubeEnv(credentialsId: 'sonartoken') {
-          bat 'C:\\Users\\doneill\\.jenkins\\tools\\hudson.plugins.sonar.SonarRunnerInstallation\\SonarQube_Scanner_Devops_Test\\bin\\sonar-scanner.bat -X -Dsonar.host.url=http://localhost:9000 -Dproject.settings=C:\Users\doneill\.jenkins\workspace\Petclinic -Dsonar.projectKey=org.springframework.samples:spring-petclinic -Dsonar.java.binaries=src -Dsonar.projectBaseDir=C:\Users\doneill\.jenkins\workspace\Petclinic'
-      }
-   }
 }
